@@ -352,7 +352,7 @@
                 {
                   $code = $_GET['code'];
                   // feed this code back to FB to get a token key for user
-                  $uri = 'https://graph.facebook.com/oauth/access_token?client_id='.FB_APP_ID.'&redirect_uri=http://muzombies.org/oauth/init&client_secret='.FB_SECRET.'&code='.$code;
+                  $uri = 'https://graph.facebook.com/oauth/access_token?client_id='.FB_APP_ID.'&redirect_uri=http://nphvz.com/oauth/init&client_secret='.FB_SECRET.'&code='.$code;
                   $json_decode = false;               
                   $return = $GLOBALS['Curl']->GetContents($uri, $json_decode);                  
                 }
@@ -585,7 +585,6 @@
     
     <div class="content_column">
       <div id="content">
-      
         <div id="content_top_border">
 
             <?php
@@ -593,12 +592,17 @@
             ?>
     
         </div>
-        
         <div class="clearfix"></div>
         
         <div id="body_content">
                      
           <div id="signup_container">
+
+            <div id="signup_process_container">
+              <?php
+                require 'module/signup_process.php';
+              ?>
+            </div> <!-- signup_process_container -->
           
             <?php
               // Need to show the appropriate step to the user
@@ -654,12 +658,6 @@
             ?>
             
           </div>
-        
-          <div id="signup_process_container">
-            <?php
-              require 'module/signup_process.php';
-            ?>
-          </div> <!-- signup_container -->
           
           <div class="clearfix"></div>
           

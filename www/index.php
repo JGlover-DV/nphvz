@@ -46,16 +46,16 @@
 </head>
 
 <body>
-
-  <div id="body_container">
   
     <?php
       require 'module/header.php';
     ?>
-    
+
+  <div id="body_container">
+  
     <div class="content_column">
       <div id="content">
-      
+        
         <div id="content_top_border">
 
             <?php
@@ -80,91 +80,74 @@
           ?>
       
           <?php if (!$_SESSION): ?>
-          <div id="group_signup_container">
-          
-            <div id="group_container">              
-              <div class="caption">
-              
-                <a class="caption_link" href="//<?php echo DOMAIN; ?>/signup">
-                <div class="caption_text">
-                  <?php
-                  if ($GLOBALS['state'] && $GLOBALS['state']['active'] && !$GLOBALS['state']['archive'] && $GLOBALS['state']['name'] != '')
-                  {
-                    echo "The {$GLOBALS['state']['name']} is happening now";
-                    $subtext = "Sign up for next semester will be available soon!";
-                  }
-                  elseif ($GLOBALS['state'] && !$GLOBALS['state']['archive'] && $GLOBALS['state']['name'] != '' && $GLOBALS['state']['start_time'] != '' && $GLOBALS['state']['start_time'] != '0')
-                  { 
-                    echo "The {$GLOBALS['state']['name']} game begins ".date("F j", $GLOBALS['state']['start_time']);
-                    $subtext = "Sign up today!";
-                  }
-                  else
-                  {
-                    echo "Humans vs. Zombies at Mizzou holds a game every semester";
-                    $subtext = "Sign up today!";
-                  }
-                  ?>
-                </div> <!-- group_caption_text -->
-                <div class="caption_subtext">
-                  <?php echo $subtext; ?>
-                </div> <!-- group_caption_subtext -->
-                </a>
-               
-              </div> <!-- caption -->
-            </div> <!-- group_container -->
-            
-            
-            <div id="signup_container">
-              <?php
-                if ($GLOBALS['state'] && $GLOBALS['state']['active'])
-                {
-                  require 'module/login_small.php';
-                }
-                else
-                {
-                  require 'module/signup_incent_small.php';
-                }
-              ?>
-            </div> 
-          
-          <div class="clearfix"></div>    
-          </div> <!-- group_signup_container -->
+          <div id="whatis_container">
+            <div id="whatis_titles">
+              <div id="whatis_title">
+                <p>What is Humans vs Zombies?</p>  
+              </div>
+              <div id="whatis_subtitle">
+                <p align="right">HvZ is a campus-wide game of tag with Nerf&trade; blasters.</p>
+              </div>
+              <div style="clear: both;"></div>
+            </div>
+            <div id="whatis_columns">
+              <div class="whatis_col">
+                <p class="whatis_text">
+                  <img src="img/bullet-1.png" class="whatis_bullet">
+                  All players start by <a href="/signup.php" class="highlight" target="blank">registering here</a>, where your score and status are tracked.
+                </p>
+                <div class="clearfix"></div>
+                <img src="img/infoC-01.png" class="whatis_graphic">
+              </div>
+              <div class="whatis_col">
+                <p class="whatis_text">
+                  <img src="img/bullet-2.png" class="whatis_bullet">
+                  All players begin as a Human except </br> for one, who is the <span class="highlight">Original Zombie</span>.
+                </p>
+                <div class="clearfix"></div>
+                <img src="img/infoC-02.png" class="whatis_graphic">
+              </div>
+              <div class="whatis_col">
+                <p class="whatis_text">
+                  <img src="img/bullet-3.png" class="whatis_bullet">
+                  Zombies can <span class="highlight">tag</span> Humans with their hands, which turns them into a Zombie.
+                </p>
+                <div class="clearfix"></div> 
+                <img src="img/infoC-03.png" class="whatis_graphic"> 
+              </div>
+              <div class="whatis_col">
+                <p class="whatis_text">
+                  <img src="img/bullet-4.png" class="whatis_bullet">
+                  Humans are able to <span class="highlight">stun</span> the Zombies with Nerf&trade; blasters or balled-up socks.
+                </p>
+                <div class="clearfix"></div>
+                <img src="img/infoC-04.png" class="whatis_graphic">
+              </div>
+            </div><!--whatis_columns-->
+            <div class="clearfix"></div>
+          </div><!--whatis_container-->
           <?php endif ?>
-          
-          <div id="what_is_container">
-          
-            <div id="what_is_title">
-            What is <span class="accent_color">Humans vs. Zombies</span>
-            </div>
-            
-            <div id="what_is">
-            <p>Humans vs. Zombies (HvZ) is a week long, 24/7 game of moderated tag commonly played on college campuses. A group of human players attempts to survive a “zombie outbreak” by outsmarting a growing group of zombie players.</p>
-            
-            <p>Human players must remain vigilant and defend themselves with socks and Nerf guns to avoid being tagged by the growing zombie horde. Currently, Humans vs. Zombies is played at over 600 campuses across the United States!</p>
-            
-            <p>Not convinced yet? Check out the <span class="accent_color bold">epic</span> documentary:</p>
-            
-            <div id="what_is_video">
-            <object width="370" height="225"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="//vimeo.com/moogaloop.swf?clip_id=1956330&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=59a5d1&amp;fullscreen=1" /><embed src="//vimeo.com/moogaloop.swf?clip_id=1956330&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=59a5d1&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="370" height="225" /></object>
-            </div>
-            
-            <p>(note: we recommend watching it full screen)</p>
-            
-            </div>
-            
-          </div>
-        
-          <div id="page_posts_container">
-            <?php           
-              require 'module/page_posts.php';
-            ?>
-          </div> <!-- page_posts_containre -->
 
-          <!--
-          <div class="index_header_message">
-          Mizzou Humans vs. Zombies is supported by VAMortgageCenter.com <a class="accent_color" href="//www.vamortgagecenter.com/careers/">who is always hiring bright, talented people</a>
+          <div id="flickr_container">
+            <iframe id='iframe' src='http://flickrit.com/slideshowholder.php?height=56&size=big&setId=72157651444909556&trans=1&theme=1&thumbnails=0&transition=0&layoutType=responsive&sort=0' scrolling='no' frameborder='0'style='width:100%; height:100%; position: absolute; top:0; left:0;' ></iframe>
           </div>
-          -->
+
+          <div id="content_column_container">
+            <div id="column_left">
+              <div id="whatis_title">
+                <p>Join Our Latest Game:</p>  
+              </div>
+              <a href="/joingame"><img style="max-width:100%; height:500px; margin:50px 8%;" src="/img/posters/poster-s15.png"/></a>
+            </div>
+            <div id="column_right">
+              <div class="page_post_container">
+                <?php           
+                  require 'module/page_posts.php';
+                ?>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div><!-- column_container -->
           
           <div class="clearfix"></div>
           

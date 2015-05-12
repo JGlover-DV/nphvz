@@ -1,6 +1,6 @@
 <?php
 
-  $page_title = 'Orientations';
+  $page_title = 'GI Meetings';
   $require_login = false;
   
   require '../knoopvszombies.ini.php';
@@ -74,7 +74,7 @@
           <div id="orient_container">
 
             <div class="orient_title">
-              Orientations <span class="accent_color"><?php echo $game['name']; ?></span>
+              General Interest Meetings for <span class="accent_color"><?php echo $game['name']; ?></span>
             </div>
 
             <div class="orient_header">

@@ -35,7 +35,7 @@
     
     <div class="content_column">
       <div id="content">
-      
+        
         <div id="content_top_border">
 
             <?php

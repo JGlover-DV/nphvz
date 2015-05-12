@@ -7,9 +7,9 @@
   
   require '../knoopvszombies.ini.php';
   
-  require 'module/includes.php';
+  require '/module/includes.php';
   
-  require 'module/general.php';
+  require '/module/general.php';
   
 ?>
 
@@ -20,7 +20,7 @@
 
 <head>
   <?php
-    require 'module/html_head.php';
+    require '/module/html_head.php';
   ?>
   
   <link href="//<?php echo DOMAIN; ?>/css/page/index.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +32,7 @@
   <div id="body_container">
   
     <?php
-      require 'module/header.php';
+      require '/module/header.php';
     ?>
     
     <div class="content_column">
@@ -41,7 +41,7 @@
         <div id="content_top_border">
 
             <?php
-              require 'module/body_header.php';
+              require '/module/body_header.php';
             ?>
     
         </div>
@@ -49,7 +49,7 @@
         <div id="body_content">
         
           <div id="forums">
-          <script type="text/javascript" src="//<?php echo DOMAIN; ?>/forum/plugins/embedvanilla/remote.js"></script>
+              <script type="text/javascript" src="//<?php echo DOMAIN; ?>/forum/plugins/embedvanilla/remote.js"></script>
           </div>
           
           <div class="clearfix"></div>

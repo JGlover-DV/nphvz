@@ -16,7 +16,7 @@
   if ($GLOBALS['state'])
   {
     
-    if ($GLOBALS['state']['active'])
+    if ($GLOBALS['state']['active'] == 1)
     {
       $user_game = $GLOBALS['User']->GetUserFromGame($_SESSION['uid'], $GLOBALS['state']['gid']);
       if ($user_game['status'] == 'zombie' || $user_game['oz'])
@@ -50,14 +50,17 @@
                 $feed1 = $_POST['feed1'];
               if (isset($_POST['feed2']))
                 $feed2 = $_POST['feed2'];
-              if (isset($_POST['location_x']) && isset($_POST['location_y']))
+              /*if (isset($_POST['location_x']) && isset($_POST['location_y']))
               {
                 $location_x = $_POST['location_x'];
                 $location_y = $_POST['location_y'];
-              }
+              }*/
                 
-              $GLOBALS['Game']->RegisterKill($GLOBALS['state']['gid'], $zombie, $targetSecret, $feed1, $feed2, $location_x, $location_y);
+              $GLOBALS['Game']->RegisterKill($GLOBALS['state']['gid'], $zombie, $targetSecret, $feed1, $feed2); //, $location_x, $location_y
               $error = false;
+
+              //Dump user to the home page after kill is registered.
+              header('Location: //'.DOMAIN);
             }
             else
             {
@@ -165,9 +168,9 @@
               <p>Remember, every zombie must feed once every 48 hours otherwise they starve. You can share your kill with two other zombies to reset their feed timers. If the secret game ID you received does not work, contact a moderator. Secret Game IDs are <span class="bold">not</span> case sensitive.</p>
             </div>
 
-            <div class="reportakill_header">
+            <!--<div class="reportakill_header">
               <p>Optionally you may include where the kill occured. We may use this data at the end of the game to make an interesting kill "heat map".</p>
-            </div>
+            </div>-->
             
             <div class="reportakill_content">
 

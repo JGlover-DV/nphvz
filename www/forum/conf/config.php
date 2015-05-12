@@ -4,24 +4,24 @@
 $Configuration['Conversations']['Version'] = '2.0.16';
 
 // Database
-$Configuration['Database']['Name'] = FORUM_DATABASE;
-$Configuration['Database']['Host'] = DATABASE_HOSTNAME;
-$Configuration['Database']['User'] = 'web';
-$Configuration['Database']['Password'] = DATABASE_PASS_FOR_WEB;
+$Configuration['Database']['Name'] = 		FORUM_DATABASE;
+$Configuration['Database']['Host'] = 		DATABASE_HOSTNAME;
+$Configuration['Database']['User'] = 		DATABASE_USER;
+$Configuration['Database']['Password'] = 	DATABASE_PASS_FOR_WEB;
 
 // EnabledApplications
-$Configuration['EnabledApplications']['Skeleton'] = 'skeleton';
-$Configuration['EnabledApplications']['Conversations'] = 'conversations';
-$Configuration['EnabledApplications']['Vanilla'] = 'vanilla';
+$Configuration['EnabledApplications']	['Skeleton'] = 		'skeleton';
+$Configuration['EnabledApplications']['Conversations'] = 	'conversations';
+$Configuration['EnabledApplications']['Vanilla'] = 			'vanilla';
 
 // EnabledPlugins
-$Configuration['EnabledPlugins']['GettingStarted'] = 'GettingStarted';
-$Configuration['EnabledPlugins']['HtmLawed'] = 'HtmLawed';
-$Configuration['EnabledPlugins']['embedvanilla'] = 'embedvanilla';
-$Configuration['EnabledPlugins']['Poll'] = 'Poll';
+$Configuration['EnabledPlugins']['GettingStarted'] = 		'GettingStarted';
+$Configuration['EnabledPlugins']['HtmLawed'] = 				'HtmLawed';
+$Configuration['EnabledPlugins']['embedvanilla'] = 			'embedvanilla';
+$Configuration['EnabledPlugins']['Poll'] = 					'Poll';
 
 // Garden
-$Configuration['Garden']['Title'] = 'Mizzou Humans vs. Zombies';
+$Configuration['Garden']['Title'] = 'New Paltz Humans vs. Zombies';
 $Configuration['Garden']['Cookie']['Salt'] = 'ZUZXZ1UHSX';
 $Configuration['Garden']['Cookie']['Domain'] = 'http://'.DOMAIN.'/';
 $Configuration['Garden']['Version'] = '2.0.16';
@@ -29,6 +29,9 @@ $Configuration['Garden']['RewriteUrls'] = TRUE;
 $Configuration['Garden']['CanProcessImages'] = TRUE;
 $Configuration['Garden']['Installed'] = TRUE;
 $Configuration['Garden']['Errors']['MasterView'] = 'error.master.php';
+
+$Configuration['Garden']['Errors']['MasterView']                = 'deverror.master.php'; // Used at installation time and you should use it to view when debugging
+
 $Configuration['Garden']['RequiredUpdates'] = 'a:0:{}';
 $Configuration['Garden']['UpdateCheckDate'] = 1296504566;
 $Configuration['Garden']['Theme'] = 'default';
