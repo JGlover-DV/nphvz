@@ -1,27 +1,29 @@
-# Knoop vs Zombies
+# New Paltz Humans vs Zombies (NPHvZ)
 
-An open source [Humans vs Zombies](http://humansvszombies.org/) game engine. Find a hosted version of this engine at [http://muzombies.org](http://muzombies.org) and [http://trumanzombies.org](http://muzombies.org).
+Built on [KnoopvsZombies](https://github.com/mikeknoop/knoopvszombies), an open source [Humans vs Zombies](http://humansvszombies.org/) game engine created by [Mike Knoop](http://mikeknoop.com/). You can find the live version of this site up and running at [http://nphvz.com](http://nphvz.com).
 
-![Knoop vs Zombies in action](http://i.imgur.com/j6ZbQDY.png)
+![NPHvZ in action](http://i.imgur.com/CCZNIyV.png)
 
 # Install
 
 There are a few moving pieces. The engine is currently designed to run on a LAMP stack.
 
-1. Clone the repo to your server
+1. Clone this repository to your server
 2. Edit knoopvszombies.ini.php to match all your local environment settings
 3. Place the `cron` file commands into your cronjob. Also update the paths in this file to match your server
 4. Set up two new databases, one for the engine and one for the forums. Import the schema from the two `.sql` files in the root folder
 5. (You may need to do more work to get the forums set up properly, a starting point is the Vanilla docs: http://vanillaforums.org/docs/installation)
-6. Emails are sent out using the standard PHP email mechanisms so make sure you have all the proper rigging to send emails without them getting flagged as spam.
+6. Emails are sent out using the standard PHP email mechanisms, so make sure you have all the proper rigging to send emails without them getting flagged as spam.
 
 # Motivation
 
-Running the game at the University of Missouri, we indentified several flaws around the game and engine that could be rectified with an improved game engine. This engine introduces several features that assist in running a Humans vs. Zombies game from a player standpoint and a moderator (admin) standpoint.
+For years, New Paltz HvZ has used a combination of the official HvZ Source tracker and multiple Facebook groups to organize our games. This didn't fill all of our needs, however. We wanted to have complete control over our games from top to bottom. Additionally, this replaces Facebook groups with automated Human and Zombie forums on so zombies don't have to be manually removed from secret human groups like they did in the past.
+
+Most importantly, this site will allow future webmasters of the club to practice working on a live website and gain real web development experience. Having it on Github will also teach them to collaborate with other team members and learn how to use version control software. We chose an open-source tracker so students will be able to build upon it and add new features as they need them. NPHvZ.com should grow with the club over time: it will be the ultimate tool for making our game run as smoothly as possible.
 
 # Questions
 
-Email me: mikeknoop@gmail.com I'll be happy to help!
+If you need to contact the current webmaster, our [Facebook page](https://www.facebook.com/NPHVZ) is your best bet for getting in touch with our current eboard. If you have more technical questions, feel free to email the original webmaster of this site, Jon Glover, at juandglover@gmail.com.
 
 # Overview
 
@@ -33,7 +35,7 @@ The game is in "pre game" mode. During this time, players can sign up and join t
 
 Automatically, the game will begin at the date and time the moderator originally chose for the game (CST time by deafult, change in knoopvszombies.ini.php). At this time, the game goes into "in game" mode. All players who were marked as having attended an orientation will be kept alive. Any player who did not attend an orientation will be marked as deceased. Original Zombies are shown as humans on the website until the moderators decide to unhide original zombies through the "Game Progress" admin panel (see below).
 
-The game continues for several days. Every 5 minutes (a cron job, `game_logic.php`) is run to check if anyone is about to die because they haven't been "fed" in 48 (configurable) hours. As zombie players enter codes to confirm kill, the human is automatically marked as a zombie and notified via email, and the reporting zombie will be fed and can feed two other players from a list.
+The game continues for several days. Every 5 minutes (a cron job, `game_logic.php`) is run to check if anyone is about to die because they haven't been "fed" in 48 hours (or whatever period of time is set in the `knoopvszombies.ini.php` file). As zombie players enter codes to confirm kill, the human is automatically marked as a zombie and notified via email, and the reporting zombie will be fed and can feed two other players from a list.
 
 Finally, everone is a zombie or the moderators end the game through a story element. The gameplay progress is manually moved into "post game" by a moderator. At this time, all stats are locked and the game is archived. Moving the game into "post game" cannot be undone.
 
@@ -93,10 +95,10 @@ An interface to create and edit upcoming games. Name the game, set start date an
 
 ## Forums
 
-- In house forums that have "human only" and "zombie only" forums for communication.
+- In house forums that have "human only" and "zombie only" forums for communication .
 
 ![Forums](http://i.imgur.com/CLcZj2E.png)
 
 # License
 
-Knoop vs Zombies is available under the MIT license.
+Knoop vs Zombies is available under the [MIT license](http://en.wikipedia.org/wiki/MIT_License).
